@@ -1,0 +1,9 @@
+{
+  "name": "rexumly",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered resume analyzer",
+  "devDependencies": {
+    "vercel": "65.14.0"
+  }
+}

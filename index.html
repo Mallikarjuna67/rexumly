@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Rexumly helps you analyze your resume, evaluate ATS compatibility, and improve your chances of getting hired.">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Rexumly - AI Resume Analyzer</title>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JavaScript Application -->
+    <script type="module" src="js/app.js"></script>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <header class="header" id="home">
+
+        <nav class="navbar container">
+
+            <a href="#home" class="logo" aria-label="Rexumly Home">
+                <img
+                    src="assets/icons/rexumly-logo.png"
+                    alt="Rexumly"
+                    class="logo-image"
+                >
+            </a>
+
+            <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Toggle navigation"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+
+                <a href="#home" class="nav-link">Home</a>
+
+                <a href="#analyzer" class="nav-link">
+                    Resume Analyzer
+                </a>
+
+                <a href="#features" class="nav-link">
+                    Features
+                </a>
+
+                <a href="#how-it-works" class="nav-link">
+                    How It Works
+                </a>
+
+                <a href="#analyzer" class="nav-button">
+                    Analyze Resume
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <main>
+
+        <section class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        AI-Powered Resume Intelligence
+                    </div>
+
+                    <h1>
+                        Your Resume,
+                        <span>Reimagined for Success.</span>
+                    </h1>
+
+                    <p>
+                        Make your next career move with confidence.
+                        Analyze your resume, discover missing skills,
+                        and get intelligent recommendations powered
+                        by AI.
+                    </p>
+
+                    <div class="hero-actions">
+
+                        <a href="#analyzer" class="btn btn-primary">
+                            Analyze My Resume
+                            <span>→</span>
+                        </a>
+
+                        <a href="#how-it-works" class="btn btn-secondary">
+                            How It Works
+                        </a>
+
+                    </div>
+
+                    <div class="hero-trust">
+                        <span>✓ Easy to use</span>
+                        <span>✓ AI-powered insights</span>
+                        <span>✓ PDF support</span>
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="preview-card">
+
+                        <div class="preview-header">
+                            <span>Resume Analysis</span>
+                            <span class="preview-status">
+                                ● Preview
+                            </span>
+                        </div>
+
+                        <div class="preview-score">
+
+                            <div class="score-circle">
+                                <div>
+                                    <strong>85</strong>
+                                    <small>/100</small>
+                                </div>
+                            </div>
+
+                            <div class="score-description">
+                                <h3>Strong Profile!</h3>
+                                <p>
+                                    Your resume has good potential.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="preview-divider"></div>
+
+                        <div class="preview-item">
+                            <span>Skills Match</span>
+                            <strong>92%</strong>
+                        </div>
+
+                        <div class="preview-progress">
+                            <span style="width: 92%"></span>
+                        </div>
+
+                        <div class="preview-item">
+                            <span>Experience</span>
+                            <strong>78%</strong>
+                        </div>
+
+                        <div class="preview-progress">
+                            <span style="width: 78%"></span>
+                        </div>
+
+                        <div class="preview-item">
+                            <span>Keywords</span>
+                            <strong>85%</strong>
+                        </div>
+
+                        <div class="preview-progress">
+                            <span style="width: 85%"></span>
+                        </div>
+
+                        <div class="preview-tip">
+                            ✨ Improve your resume with AI insights.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ANALYZER SECTION ================= -->
+
+        <section class="analyzer-section section-padding"
+            id="analyzer">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+                        RESUME ANALYZER
+                    </span>
+
+                    <h2>
+                        Let's Optimize Your Resume
+                    </h2>
+
+                    <p>
+                        Upload your resume and provide the job
+                        description to receive personalized AI
+                        recommendations.
+                    </p>
+
+                </div>
+
+
+                <div class="analyzer-card">
+
+                    <form id="resumeForm">
+
+                        <!-- Resume Upload -->
+
+                        <div class="form-group">
+
+                            <label class="form-label"
+                                for="resumeFile">
+                                Upload Your Resume
+                            </label>
+
+                            <div class="upload-area"
+                                id="uploadArea">
+
+                                <input
+                                    type="file"
+                                    id="resumeFile"
+                                    name="resume"
+                                    accept=".pdf,.docx,.png,.jpg,.jpeg,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,image/png,image/jpeg"
+                                    hidden
+                                >
+
+                                <div class="upload-icon">
+                                    ↑
+                                </div>
+
+                                <h3>
+                                    Drag and drop your resume here
+                                </h3>
+
+                                <p>
+                                    or click below to browse files
+                                </p>
+
+                                <button type="button"
+                                    class="browse-button"
+                                    id="browseButton">
+                                    Browse PDF
+                                </button>
+
+                                <small>
+                                    Supported format: PDF
+                                </small>
+
+                            </div>
+
+                            <p class="file-info" id="fileInfo"
+                                aria-live="polite">
+                            </p>
+
+                        </div>
+
+
+                        <!-- Job Description -->
+
+                        <div class="form-group">
+
+                            <label class="form-label"
+                                for="jobDescription">
+                                Target Job Description
+                            </label>
+
+                            <textarea
+                                id="jobDescription"
+                                name="jobDescription"
+                                rows="7"
+                                placeholder="Paste the job description here...
+
+Example:
+We are looking for a frontend developer with knowledge of HTML, CSS, JavaScript, React and responsive web design."
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <small>
+                                    Paste the job requirements
+                                    for a more relevant analysis.
+                                </small>
+
+                                <span id="charCount">
+                                    0 characters
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Analyze Button -->
+
+                        <button type="submit"
+                            class="btn btn-primary analyze-button"
+                            id="analyzeButton">
+
+                            Analyze My Resume
+                            <span>→</span>
+
+                        </button>
+
+                        <p class="form-message"
+                            id="formMessage"
+                            role="status"
+                            aria-live="polite">
+                        </p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESULTS SECTION ================= -->
+
+        <section class="results-section section-padding"
+            id="results" hidden>
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-tag">
+                        AI ANALYSIS
+                    </span>
+
+                    <h2>Your Resume Analysis</h2>
+
+                    <p>
+                        Here are the insights generated from
+                        your resume and target job description.
+                    </p>
+                </div>
+
+                <div id="analysisResults">
+
+                    <div class="result-score-card">
+
+                        <h3>ATS Compatibility Score</h3>
+
+                        <div class="result-score"
+                            id="atsScore">
+                            --/100
+                        </div>
+
+                        <p id="scoreSummary">
+                            Your analysis will appear here.
+                        </p>
+
+                    </div>
+
+                    <div class="result-grid">
+
+                        <article class="result-card">
+                            <h3>Resume Strengths</h3>
+                            <ul id="strengthsList"></ul>
+                        </article>
+
+                        <article class="result-card">
+                            <h3>Areas to Improve</h3>
+                            <ul id="weaknessesList"></ul>
+                        </article>
+
+                        <article class="result-card">
+                            <h3>Missing Skills</h3>
+                            <ul id="missingSkillsList"></ul>
+                        </article>
+
+                        <article class="result-card">
+                            <h3>AI Recommendations</h3>
+                            <ul id="recommendationsList"></ul>
+                        </article>
+
+                    </div>
+
+                    <button type="button"
+                        class="btn btn-secondary"
+                        id="copyReportButton">
+                        Copy Analysis Report
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= FEATURES SECTION ================= -->
+
+        <section class="features-section section-padding"
+            id="features">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+                        WHY REXUMLY?
+                    </span>
+
+                    <h2>
+                        Everything You Need to Improve Your Resume
+                    </h2>
+
+                    <p>
+                        Powerful tools to help you understand
+                        and improve your professional profile.
+                    </p>
+
+                </div>
+
+
+                <div class="features-grid">
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">🎯</div>
+
+                        <h3>ATS Compatibility</h3>
+
+                        <p>
+                            Evaluate your resume against
+                            important job requirements and
+                            ATS-related criteria.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">🤖</div>
+
+                        <h3>AI-Powered Analysis</h3>
+
+                        <p>
+                            Get intelligent feedback about
+                            your resume using AI technology.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">🔍</div>
+
+                        <h3>Skill Gap Detection</h3>
+
+                        <p>
+                            Identify missing skills and
+                            relevant keywords from your
+                            target job description.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">💡</div>
+
+                        <h3>Smart Recommendations</h3>
+
+                        <p>
+                            Receive actionable suggestions
+                            to improve your resume quality.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">📄</div>
+
+                        <h3>PDF Resume Support</h3>
+
+                        <p>
+                            Upload your existing PDF resume
+                            and extract its text for analysis.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-icon">⚡</div>
+
+                        <h3>Quick Results</h3>
+
+                        <p>
+                            Get a structured overview of
+                            your resume and areas that
+                            deserve attention.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= HOW IT WORKS ================= -->
+
+        <section class="how-section section-padding"
+            id="how-it-works">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-tag">
+                        SIMPLE PROCESS
+                    </span>
+
+                    <h2>
+                        How Rexumly Works
+                    </h2>
+
+                    <p>
+                        Three simple steps to get useful
+                        resume insights.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <article class="step-card">
+
+                        <div class="step-number">01</div>
+
+                        <h3>Upload Resume</h3>
+
+                        <p>
+                            Upload your resume in PDF format
+                            to begin the analysis.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">02</div>
+
+                        <h3>Analyze with AI</h3>
+
+                        <p>
+                            Provide your target job description
+                            and let AI evaluate your resume.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number">03</div>
+
+                        <h3>Improve Your Resume</h3>
+
+                        <p>
+                            Review your score, missing skills
+                            and recommendations.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CALL TO ACTION ================= -->
+
+        <section class="cta-section">
+
+            <div class="container cta-content">
+
+                <h2>
+                    Ready to Make Your Resume Stand Out?
+                </h2>
+
+                <p>
+                    Take the first step towards a stronger
+                    professional profile.
+                </p>
+
+                <a href="#analyzer"
+                    class="btn btn-light">
+                    Start Analyzing Now →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+           <a href="#home" class="logo footer-logo">
+                <img
+                    src="assets/icons/rexumly-logo.png"
+                    alt="Rexumly"
+                    class="logo-image"
+                >
+            </a>
+
+            <p>
+                Smarter resumes. Better opportunities.
+            </p>
+
+            <div class="footer-links">
+
+                <a href="#home">Home</a>
+
+                <a href="#features">Features</a>
+
+                <a href="#how-it-works">How It Works</a>
+
+                <a href="#analyzer">Analyze Resume</a>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © <span id="currentYear">2026</span>
+                    Rexumly. All rights reserved.
+                </p>
+
+                <p>
+                    Built with AI and ambition.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
