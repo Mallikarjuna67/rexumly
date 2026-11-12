@@ -6,12 +6,6 @@ Upload your resume, paste a job description, and get an AI-generated report show
 
 ---
 
-## Application Preview
-
-![Rexumly Dashboard](assets/screenshots/dashboard.png)
-
----
-
 ## Features
 
 - **Resume upload:** supports PDF, DOCX, PNG, and JPG/JPEG files.
