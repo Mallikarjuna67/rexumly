@@ -2,7 +2,13 @@
 
 Upload your resume, paste a job description, and get an AI-generated report showing how well they match, what is missing, and how to improve.
 
-**Live demo:** [https://rexumly.vercel.app]
+**Live demo:** [https://rexumly.vercel.app](https://rexumly.vercel.app)
+
+---
+
+## Application Preview
+
+![Rexumly Dashboard](assets/screenshots/dashboard.png)
 
 ---
 
@@ -53,11 +59,14 @@ Both providers return the same JSON structure, so the interface works the same r
 ## Project Structure
 
 ```text
-Rexumly/
+rexumly/
 ├── api/
 │   └── analyze.js          # Backend: Gemini + Groq fallback
-├── assets/icons/
-│   └── rexumly-logo.png
+├── assets/
+│   ├── icons/
+│   │   └── rexumly-logo.png
+│   └── screenshots/
+│       └── dashboard.png   # Application preview image
 ├── css/
 │   └── style.css
 ├── js/
@@ -86,8 +95,8 @@ Rexumly/
 ### 1. Clone and install
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
-cd Rexumly
+git clone https://github.com/Mallikarjuna67/rexumly.git
+cd rexumly
 npm install
 ```
 
@@ -100,7 +109,7 @@ GEMINI_API_KEY=your_gemini_api_key
 GROQ_API_KEY=your_groq_api_key
 ```
 
-Do not use quotes or spaces around `=`. Never commit this file to GitHub.
+Do not use quotes or spaces around `=`, and make sure there is no trailing space or line break after the key. Never commit this file to GitHub.
 
 ### 3. Run locally
 
@@ -139,7 +148,9 @@ Open [http://localhost:3000](http://localhost:3000).
 | Problem | Likely cause and fix |
 |---|---|
 | `Groq fallback key is not configured` | `GROQ_API_KEY` is missing. Add it to `.env.local` (local) or Vercel settings (production), then restart the server or redeploy. |
+| Groq returns HTTP 401 | The key is invalid, revoked, or has extra characters (quotes, spaces, or a line break). Groq keys start with `gsk_`. Re-copy or regenerate the key at [console.groq.com](https://console.groq.com/), update it, and redeploy. |
 | Gemini returns HTTP 429 | Quota or rate limit reached. Check usage in Google AI Studio. Groq takes over automatically if configured. |
+| Gemini request times out | The request took too long. Try again, or reduce the size of the resume or job description text. |
 | 503 error in the browser | Both providers failed. Check the server logs for the exact reason. |
 | Changes to `.env.local` have no effect | Restart `vercel dev`. Environment variables are only read at startup. |
 
